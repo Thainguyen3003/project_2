@@ -1,0 +1,183 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		script(type='text/javascript').
+		link(rel="stylesheet", href="../stylesheets/css/app.css")
+		link(rel="stylesheet", href="../stylesheets/css/base.css")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer")
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+	body
+		div.app
+			header.header
+				div.header-top
+					div.grid
+						nav.header__navbar
+							ul.header__navbar-list
+								li.header__navbar-item
+									a.header__navbar-item-link.header__navbar-item-strong(href="#") Thi thu MJT
+								li.header__navbar-item
+									a.header__navbar-item-link(href="#") Bang gia
+								li.header__navbar-item
+									a.header__navbar-item-link(href="#") Bai viet
+								li.header__navbar-item
+									a.header__navbar-item-link(href="#") Ho tro
+								li.header__navbar-item
+									a.header__navbar-item-link(href="#") Giao vien
+								li.header__navbar-item
+									a.header__navbar-item-link(href="#") Review trung tam
+							ul.header__navbar-list
+								li.header__navbar-item.header__navbar-icon
+									a(href="#")
+										img(src="https://dungmori.com/assets/img/shop.png?", alt="")
+								li.header__navbar-item Dang nhap
+								li.header__navbar-item Tao tai khoan
+							
+				div.header-mid
+					div.grid
+						nav.header__navbar
+							ul.header__navbar-list
+								li.header__navbar-item-mid
+									a.header__navbar-img-home(href="#")
+										img(src="https://skdesu.com/wp-content/uploads/2018/05/EASYROCK-TRAVEL-NIHONGOFT1.jpg", alt="Home")
+								li.header__navbar-item-mid Khoa mien phi <i class="fas fa-caret-down"></i>
+								li.header__navbar-item-mid Khoa JLPT <i class="fas fa-caret-down"></i>
+								li.header__navbar-item-mid Khoa Kaiwa <i class="fas fa-caret-down"></i>
+								li.header__navbar-item-mid Khoa EJU <i class="fas fa-caret-down"></i>
+								li.header__navbar-item-mid
+									a(href="#") Khoa doanh nghiep
+
+
+			div.container
+
+			//- Modal layout
+			div.modal
+				div.modal__overlay
+
+				div.modal__body
+					div.modal__inner
+						//- Authen form
+						div.auth-form
+							div.auth-form__left
+								img(src="https://chiasemoi.com/wp-content/uploads/2018/01/cung-nhau-hoc-tieng-nhat-ebook.jpg", alt="Background trung tam")
+							div.auth-form__right
+								ul.auth-form__right-heading
+									li.auth-form__login Dang nhap
+									li.auth-form__register Tao tai khoan
+								div.auth-form__right-content
+									div.col-md-11
+										div.auth-form__register-content
+											form
+												div.form-group
+													label.col-md-4.control-label.control-label Ho va ten
+													div.col-md-8
+														input.form-control(placeholder="Ho va ten")
+												div.form-group
+													label.col-md-4.control-label Email
+													div.col-md-8
+														input.form-control(placeholder="Email")
+												div.form-group
+													label.col-md-4.control-label Mat khau
+													div.col-md-8
+														input.form-control(placeholder="Mat khau")
+														input.form-control(placeholder="Nhap lai mat khau")
+
+												div.form-group
+													label.col-md-4.control-label So dien thoai
+													div.col-md-8
+														input.form-control(placeholder="So dien thoai")
+												div.form-group
+													label.col-md-4.control-label Gioi tinh
+													div.col-md-8
+														select.form-control
+															option(value="") - Chon gioi tinh -
+															option(value="Nam") Nam
+															option(value="Nu") Nu  
+														
+												div.form-group
+													label.col-md-4.control-label Ngay sinh
+													div.col-md-8
+														div.row
+															div.col-xs-5
+																select.form-control.register-month(name="birth_month")
+																	option(value="") Chon thang
+																	option(value="1") Thang 1 
+																	option(value="2") Thang 2 
+																	option(value="3") Thang 3 
+																	option(value="4") Thang 4 
+																	option(value="5") Thang 5 
+																	option(value="6") Thang 6 
+																	option(value="7") Thang 7 
+																	option(value="8") Thang 8 
+																	option(value="9") Thang 9 
+																	option(value="10") Thang 10 
+																	option(value="11") Thang 11
+																	option(value="12") Thang 12
+															div.col-xs-3
+																input.form-control.register-day(type="number" name="birth_day" placeholder="Ngay")
+															div.col-xs-4
+																input.form-control.register-year(type="number" name="birth_year" placeholder="Nam")
+
+												div.form-group
+													label.col-md-4.control-label Trinh do
+													div.col-md-8
+														select.form-control(name="japanese_level")
+															option(value="") - Chon trinh do hien tai -
+															option(value="Khong") Bat dau hoc
+															option(value="N5") Da qua N5 
+															option(value="N4") Da qua N4
+															option(value="N3") Da qua N3 
+															option(value="N2") Da qua N2 
+															option(value="N1") Da qua N1 
+												div.form-group
+													label.col-md-4.control-label Quoc gia
+													div.col-md-8
+														select.form-control
+															option(value="") - Chon quoc gia -
+															option(value="") Viet Nam
+															option(value="") Japan
+															option(value="") Khac 
+												div.form-group
+													label.col-md-4.control-label
+													div.col-md-8
+														div.checkbox
+															label.agree-checkbox
+																input(type="checkbox")
+																span Dong y voi cac  
+																	a(href="") Dieu khoan su dung
+																	|  va 
+																	a(href="") Chinh sach bao mat
+																	|  cua website
+												div.form-group
+													lable.col-md-4.control-label
+													div.col-md-8
+														button.btn-register
+															span Dang ky
+															span(style="display: none;") Dang xac thuc...
+														
+										//- form login
+													
+										div.form-group
+											label.col-md-4.control-label
+											div.col-md-8
+												div.break-line Hoac dang nhap nhanh bang
+												div.register-social
+													a(href="#")
+														button.btn.btn-social.btn-facebook
+															<i class="fab fa-facebook-f"></i>
+													a(href="#")
+														button.btn.btn-social.btn-google
+															<i class="fab fa-google-plus-g"></i>
+													a(href="#")
+														button.btn.btn-social.btn-apple
+															<i class="fab fa-apple"></i>  												
+													
+
+								
+
+
+			footer.footer
+
+
+	block body

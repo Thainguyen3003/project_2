@@ -1,0 +1,96 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-color: #41A336;
+    --text-color: #404040;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+.col-md-4 {
+    width: 33.3333%;
+}
+
+.col-md-8 {
+    width: 66.6667%;
+}
+
+.col-md-11 {
+    width: 91.6667%;
+}
+
+.col-xs-5 {
+    width: 41.6667%;
+}
+
+.col-xs-4 {
+    width: 33.3333%;
+}
+
+.col-xs-3 {
+    width: 25%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+}
+
+.header-top {
+    border-bottom: 1px solid #EEE;
+}
+
+.header-mid {
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    background-color: #FFF;
+    margin: 0 auto;
+
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.auth-form__heading {
+
+}
+
+.auth-form__login {
+
+}
+
+.auth-form__register {
+
+}
