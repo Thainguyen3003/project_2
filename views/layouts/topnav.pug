@@ -31,8 +31,8 @@ html(lang="en")
 								li.header__navbar-item.header__navbar-icon
 									a(href="#")
 										img(src="https://dungmori.com/assets/img/shop.png?", alt="")
-								li.header__navbar-item Dang nhap
-								li.header__navbar-item Tao tai khoan
+								li.header__navbar-item.tab-login(onclick="swichTab_login()") Dang nhap
+								li.header__navbar-item.tab-register(onclick="swichTab_register()") Tao tai khoan
 							
 				div.header-mid
 					div.grid
@@ -52,7 +52,7 @@ html(lang="en")
 			div.container
 
 			//- Modal layout
-			div.modal
+			div.modal(id="authModal")
 				div.modal__overlay
 
 				div.modal__body
@@ -67,7 +67,8 @@ html(lang="en")
 									li.auth-form__register Tao tai khoan
 								div.auth-form__right-content
 									div.col-md-11
-										div.auth-form__register-content
+										//- form register
+										div.auth-form__register-content(id="tabRegister")
 											form
 												div.form-group
 													label.col-md-4.control-label.control-label Ho va ten
@@ -157,7 +158,31 @@ html(lang="en")
 															span(style="display: none;") Dang xac thuc...
 														
 										//- form login
-													
+										div.auth-form__login-content(id="tabLogin")
+											form
+												div.form-group
+													label.col-md-4.control-label Email
+													div.col-md-8
+														input.form-control(placeholder="Email")
+												div.form-group
+													label.col-md-4.control-label Mat khau
+													div.col-md-8
+														input.form-control(placeholder="Mat khau")
+												div.form-group
+													label.col-md-4.control-label
+													div.col-md-8
+														div.checkbox
+															label.agree-checkbox
+																input(type="checkbox")
+																span Ghi nho dang nhap
+												div.form-group
+													lable.col-md-4.control-label
+													div.col-md-8
+														button.btn-register
+															span Dang nhap
+															span(style="display: none;") Dang xac thuc...
+														p
+															a.forgot-password(href="#") Quen mat khau ?				
 										div.form-group
 											label.col-md-4.control-label
 											div.col-md-8
@@ -179,5 +204,20 @@ html(lang="en")
 
 			footer.footer
 
+		script.
 
+			var modal = document.getElementById('authModal');
+			var tabLogin = document.getElementById('tabLogin');
+			var tabRegister = document.getElementById('tabRegister');
+
+			function swichTab_login() {
+				modal.style.display = 'flex';
+				tabRegister.style.display = 'none';
+			}
+
+			function swichTab_register() {
+				modal.style.display= 'flex'
+				tabLogin.style.display = 'none';
+			}
+		
 	block body

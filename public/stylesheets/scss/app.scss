@@ -15,6 +15,7 @@
 
 .header__navbar-item {
     margin: 0 8px;
+    cursor: pointer;
 }
 
 .header__navbar-item-strong {
@@ -55,13 +56,17 @@
     max-width: 100%;
 }
 
+
+
+
 .modal {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
+    animation: fadeIn linear 0.2s;
+    display: none;
 }
 
 .modal__overlay {
@@ -72,11 +77,14 @@
 }
 
 .modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
     width: 800px;
     margin: auto;
     z-index: 1;
     background-color: var(--white-color);
     border-radius: 1px;
+    animation: growth linear 0.1s;
 }
 
 .auth-form {
@@ -114,6 +122,16 @@
 .auth-form__register {
     padding: 15px 0 7px 0;
     margin-right: 25px;
+    color: #434a54;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-form__right-heading > li:focus {
+    color: rgba(96, 106, 116, 0.98);
+    background-color: var(--white-color);
+    border-bottom: 2px solid var(--primary-color);
+    border-radius: 0;
 }
 
 .auth-form__right-content {
@@ -202,17 +220,28 @@
 }
 
 .btn-facebook {
-    width: 80px;
+    width: var(--size-btn);
     background-color: #3b5998;
 }
 
 .btn-google {
-    width: 80px;
+    width: var(--size-btn);
     background-color: #dd4b39;
 }
 
 .btn-apple {
-    width: 80px;
+    width: var(--size-btn);
     border: 1px solid #333;
     background-color: #333;
+}
+
+.register-social {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-password {
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+    opacity: 0.7;
 }

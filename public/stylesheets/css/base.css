@@ -2,7 +2,8 @@
   --white-color: #fff;
   --black-color: #000;
   --primary-color: #41A336;
-  --text-color: #404040; }
+  --text-color: #404040;
+  --size-btn: 76px; }
 
 * {
   box-sizing: inherit; }
@@ -64,3 +65,16 @@ html {
 .grid__row {
   display: flex;
   flex-wrap: wrap; }
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-form)); }
+  to {
+    transform: scale(var(--growth-to)); } }
