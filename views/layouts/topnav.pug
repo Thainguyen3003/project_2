@@ -37,23 +37,87 @@ html(lang="en")
 				div.header-mid
 					div.grid
 						nav.header__navbar
-							ul.header__navbar-list
+							ul.header__navbar-list-mid
 								li.header__navbar-item-mid
 									a.header__navbar-img-home(href="#")
 										img(src="https://skdesu.com/wp-content/uploads/2018/05/EASYROCK-TRAVEL-NIHONGOFT1.jpg", alt="Home")
-								li.header__navbar-item-mid Khoa mien phi <i class="fas fa-caret-down"></i>
-								li.header__navbar-item-mid Khoa JLPT <i class="fas fa-caret-down"></i>
-								li.header__navbar-item-mid Khoa Kaiwa <i class="fas fa-caret-down"></i>
-								li.header__navbar-item-mid Khoa EJU <i class="fas fa-caret-down"></i>
+								li.header__navbar-item-mid 
+									p Khoa mien phi <i class="fas fa-caret-down"></i>
+									div.hover-box
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/khcn.png", alt="")
+											| Chuyen nganh
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/kn5.png", alt="")
+											|	Khoa N5 
+								li.header__navbar-item-mid 
+									p Khoa JLPT <i class="fas fa-caret-down"></i>
+									div.hover-box
+										a.hover-box-link(href="")
+											img(src="https://dungmori.com/assets/img/mn/kn5.png", alt="") 
+											|	Khoa N5
+										a.hover-box-link(href="")
+											img(src="https://dungmori.com/assets/img/mn/kn4.png", alt="") 
+											|	Khoa N4
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/kn3.png", alt="")
+											|	Khoa N3
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/kn2.png", alt="")
+											|	Khoa N2
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/kn1.png", alt="")
+											|	Khoa N1
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/khcn.png", alt="")
+											|	Luyen de N3
+										div
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/mn.png", alt="")
+											|	Khoa Online VIP
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/mn.png", alt="")
+											|	Khoa Offline
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/mn.png", alt="")
+											|	Khoa Online Plus        
+								li.header__navbar-item-mid 
+									p Khoa Kaiwa <i class="fas fa-caret-down"></i>
+									div.hover-box
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/kwsc.png", alt="")
+											|	Kaiwa so cap
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/kwtc.png", alt="")
+											|	Kaiwa trung cap
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/tc2.png", alt="")
+											|	Kaiwa nang cao
+								li.header__navbar-item-mid 
+									p Khoa EJU <i class="fas fa-caret-down"></i>
+									div.hover-box
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/eju.png", alt="")
+											|	EJU Tieng Nhat
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/ejuxh.png", alt="")
+											|	EJU XHTH
+										a.hover-box-link(href="") 
+											img(src="https://dungmori.com/assets/img/mn/ejut.png", alt="")
+											|	EJU Toan
 								li.header__navbar-item-mid
-									a(href="#") Khoa doanh nghiep
+									a(href="#" style="text-decoration: none; color: var(--black-color)") 
+										span
+											<i class="fas fa-star"></i>
+											| Moi
+										|	Khoa doanh nghiep
 
 
 			div.container
 
 			//- Modal layout
 			div.modal(id="authModal")
-				div.modal__overlay
+				div.modal__overlay(id="modalOverlay")
 
 				div.modal__body
 					div.modal__inner
@@ -62,9 +126,12 @@ html(lang="en")
 							div.auth-form__left
 								img(src="https://chiasemoi.com/wp-content/uploads/2018/01/cung-nhau-hoc-tieng-nhat-ebook.jpg", alt="Background trung tam")
 							div.auth-form__right
+								//-button.auth-form__close
+									<i class="fas fa-times"></i>
 								ul.auth-form__right-heading
-									li.auth-form__login Dang nhap
-									li.auth-form__register Tao tai khoan
+									li.auth-form__login(onclick="swichTab_login()") Dang nhap
+									li.auth-form__register(onclick="swichTab_register()") Tao tai khoan
+									
 								div.auth-form__right-content
 									div.col-md-11
 										//- form register
@@ -182,7 +249,8 @@ html(lang="en")
 															span Dang nhap
 															span(style="display: none;") Dang xac thuc...
 														p
-															a.forgot-password(href="#") Quen mat khau ?				
+															a.forgot-password(href="#") Quen mat khau ?
+										
 										div.form-group
 											label.col-md-4.control-label
 											div.col-md-8
@@ -209,15 +277,23 @@ html(lang="en")
 			var modal = document.getElementById('authModal');
 			var tabLogin = document.getElementById('tabLogin');
 			var tabRegister = document.getElementById('tabRegister');
+			var modalOverlay = document.getElementById('modalOverlay');
 
 			function swichTab_login() {
 				modal.style.display = 'flex';
+				tabLogin.style.display = 'block';
 				tabRegister.style.display = 'none';
 			}
 
 			function swichTab_register() {
 				modal.style.display= 'flex'
+				tabRegister.style.display = 'block';
 				tabLogin.style.display = 'none';
 			}
-		
+
+			window.onclick = function(e) {
+				if(e.target == modalOverlay) {
+					modal.style.display = 'none';
+				}
+			}
 	block body
